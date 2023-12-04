@@ -19,12 +19,12 @@ public class BonusNumber {
     }
 
     private void validateDuplicate(int number, Lotto lotto) {
-        if (lotto.getNumbers().contains(number)) {
+        if (lotto.numbers().contains(number)) {
             throw new IllegalArgumentException(ExceptionMessage.DUPLICATE.getMessage());
         }
     }
 
     public boolean hasBonusNumber(Lotto lotto) {
-        return lotto.getNumbers().contains(number);
+        return lotto.numbers().contains(number);
     }
 }

@@ -17,11 +17,15 @@ public class LottoController {
     private List<Lotto> lottos;
 
     public void startGame() {
-        Money money = readMoney();
-        price = money.getPrice();
+        getPurchaseAmount();
         showPurchaseLotto();
         LottoResult lottoResult = getLottoResult();
         showLottoResult(lottoResult);
+    }
+
+    private void getPurchaseAmount() {
+        Money money = readMoney();
+        price = money.price();
     }
 
     private Money readMoney() {

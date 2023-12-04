@@ -3,17 +3,10 @@ package lotto.domain;
 import lotto.constant.ExceptionMessage;
 import lotto.constant.LottoConstant;
 
-public class Money {
-    private final int price;
-
-    public Money(int price) {
+public record Money(int price) {
+    public Money {
         validateRange(price);
         validateUnit(price);
-        this.price = price;
-    }
-
-    public int getPrice() {
-        return price;
     }
 
     private void validateRange(int number) {

@@ -4,16 +4,9 @@ import java.util.List;
 import lotto.constant.ExceptionMessage;
 import lotto.constant.LottoConstant;
 
-public class Lotto {
-    private final List<Integer> numbers;
-
-    public Lotto(List<Integer> numbers) {
+public record Lotto(List<Integer> numbers) {
+    public Lotto {
         validate(numbers);
-        this.numbers = numbers;
-    }
-
-    public List<Integer> getNumbers() {
-        return numbers;
     }
 
     private void validate(List<Integer> numbers) {

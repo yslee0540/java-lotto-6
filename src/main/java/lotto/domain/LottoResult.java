@@ -1,6 +1,7 @@
 package lotto.domain;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public class LottoResult {
     }
 
     public Map<Rank, Integer> getResult() {
-        return result;
+        return Collections.unmodifiableMap(result);
     }
 
     public void calculateNumberOfWins(List<Lotto> lottos, Lotto winningLotto, BonusNumber bonusNumber) {
