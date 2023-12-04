@@ -12,13 +12,13 @@ public class Money {
         this.price = price;
     }
 
-    public int getLottoCount() {
-        return price / LottoConstant.LOTTO_PRICE_UNIT;
+    public int getPrice() {
+        return price;
     }
 
     private void validateRange(int number) {
         if (number < LottoConstant.MIN_PRICE_NUMBER) {
-            throw new IllegalArgumentException(ExceptionMessage.WRONG_RANGE.getMessage());
+            throw new IllegalArgumentException(ExceptionMessage.WRONG_PRICE_RANGE.getMessage());
         }
     }
 
